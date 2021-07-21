@@ -15,14 +15,22 @@ for(let i=1; i<=100; i++){
 
 // Office Hour Challenge 2...
 
+// function makeItBig(arr){
+//   bigArray=[];
+//   arr.forEach(val => {
+//     if(val>=0){
+//       bigArray.push("big");
+//     }
+//     else{ bigArray.push(val);}
+// });
+// return bigArray;
+// }
+// console.log(makeItBig([-1,3,5,-5,7,-9,-18,4,19]));
+
+// Refactored...
+
 function makeItBig(arr){
-  bigArray=[];
-  arr.forEach(val => {
-    if(val>=0){
-      bigArray.push("big");
-    }
-    else{ bigArray.push(val);}
-});
-return bigArray;
+  arr.forEach(val => val >= 0 ?  arr[arr.indexOf(val)]='big' : arr[arr.indexOf(val)]=val);
+  return arr;
 }
 console.log(makeItBig([-1,3,5,-5,7,-9,-18,4,19]));
